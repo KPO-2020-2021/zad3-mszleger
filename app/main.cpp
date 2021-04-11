@@ -5,7 +5,7 @@
 #include "../include/Prostokat.hh"
 #include "../include/lacze_do_gnuplota.hh"
 
-#define NAZWAPLIKU "./datasets/prostokat.dat"
+#define NAZWAPLIKU "../datasets/prostokat.dat"
 
 // Wyświtla opcje obsługiwane przez menu
 void wyswietlMenu()
@@ -28,7 +28,10 @@ int main()
     char znak;
 
     if(Pr.wczytaj(NAZWAPLIKU) == false)            // Wczytywanie wierzchołków prostokąta
+    {
+        std::cerr << "Nie znaleziono pliku z współrzędnymi wierzchołków prostokąta!" << std::endl;
         return 1;
+    }
 
     //-------------------------------------------------------
     //  Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"
