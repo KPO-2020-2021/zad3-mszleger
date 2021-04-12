@@ -1,4 +1,3 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "./doctest/doctest.h"
 #include "../include/Macierz2x2.hh"
 
@@ -136,8 +135,8 @@ TEST_CASE("test Macierz Mnożenie 1"){
     y(0, 1) = 3;
     y(1, 1) = 4;
 
-    x[0] = 17;
-    x[1] = 39;
+    z[0] = 17;
+    z[1] = 39;
 
     CHECK((y * x) == z);
 }
