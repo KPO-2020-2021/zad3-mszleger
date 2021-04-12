@@ -44,7 +44,9 @@ set(SOURCES          # All .cpp files in src/
     src/Wektor2D.cpp
 )
 set(TESTFILES        # All .cpp files in tests/
-    tests/main.cpp
+    Wektor2D.cpp
+    Macierz2x2.cpp
+    Prostokat.cpp
 )
 set(LIBRARY_NAME engine)  # Default name for the library built from src/*.cpp (change if you wish)
 
