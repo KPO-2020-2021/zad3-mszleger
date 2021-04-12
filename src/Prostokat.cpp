@@ -125,6 +125,24 @@ bool Prostokat::zapisz(const std::string &nazwaPliku) const
     return true;
 }
 
+Wektor& Prostokat::operator [] (int indeks)
+{
+    return wierzcholek[indeks];
+}
+
+bool Prostokat::operator == (const Prostokat &prostokat) const
+{
+    for(int x = 0; x < ILOSCWIERZCHOLKOW; x++)
+        if(this->wierzcholek[x] != prostokat.wierzcholek[x])
+            return false;
+    return true; 
+}
+
+bool Prostokat::operator != (const Prostokat &prostokat) const
+{
+    return !(*this == prostokat);
+}
+
 std::ostream& operator << (std::ostream &Strm, const Prostokat &Pr)
 {
     for(int x = 0; x < ILOSCWIERZCHOLKOW; x++)                       // Wyświetlanie współrzędnych współrzędnych każdego wierzchołka

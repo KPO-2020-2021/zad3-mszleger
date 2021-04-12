@@ -26,7 +26,9 @@ class Prostokat {
     bool wczytaj(const std::string &nazwaPliku);                     // Metoda wczytująca wierzchołki prostokąta z danego pliku - zwraca true jeśli udało się wczytać
     bool zapisz(const std::string &nazwaPliku) const;                // Metoda zapisująca wierzchołki prostokąta w danym pliku - zwraca true jeśli udało się zapisać
     // Przeciążenia operatorów
- 
+    Wektor& operator [] (int indeks);                                // Przeciążenie operatora indeksującego do odczytu i zapisu wartości wierzchołka
+    bool operator == (const Prostokat &prostokat) const;             // Przeciążenie operatora porównywania dwóch macierzy
+    bool operator != (const Prostokat &prostokat) const;             // Przeciążenie operatora zanegowanego porównywania dwóch macierzy
 };
 
 std::ostream& operator << (std::ostream &Strm, const Prostokat &Pr); // Przeciążenie operatora wypisywania współrzędnych prostokąta
