@@ -51,6 +51,20 @@ double& Macierz::operator () (int wiersz, int kolumna)
     return this->wartosc[wiersz][kolumna];
 }
 
+bool Macierz::operator == (const Macierz &macierz) const
+{
+    for(int x = 0; x < ROZMIAR_MACIERZY; x++)
+        for(int y = 0; y < ROZMIAR_MACIERZY; y++)
+            if(this->wartosc[x][y] != macierz.wartosc[x][y])
+                return false;
+    return true;
+}
+
+bool Macierz::operator != (const Macierz &macierz) const
+{
+    return !(*this == macierz);
+}
+
 std::ostream& operator << (std::ostream &Strm, const Macierz &Mac)
 {
     for(int x = 0; x < ROZMIAR_MACIERZY; x++)

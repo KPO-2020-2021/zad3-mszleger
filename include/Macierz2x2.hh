@@ -23,6 +23,8 @@ class Macierz {
     Wektor  operator *  (const Wektor &wektor) const;                // Przeciążenie operatora mnożenia macierzy razy wektor
     double  operator () (int wiersz, int kolumna) const;             // Przeciążenie operatora funkcyjnego do pobierania wartości macierzy
     double& operator () (int wiersz, int kolumna);                   // Przeciążenie operatora funkcyjnego do zmieniania wartości macierzy
+    bool    operator == (const Macierz &macierz) const;              // Przeciążenie operatora porównywania dwóch macierzy
+    bool    operator != (const Macierz &macierz) const;              // Przeciążenie operatora zanegowanego porównywania dwóch macierzy
 };
 
 std::ostream& operator << (std::ostream &Strm, const Macierz &Mac);  // Przeciążenie operatora wypisywania wartości macierzy
