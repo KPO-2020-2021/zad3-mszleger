@@ -1,7 +1,7 @@
 #include "./doctest/doctest.h"
 #include "../include/Prostokat.hh"
 
-TEST_CASE("test Wektor Porównanie 1"){
+TEST_CASE("test Prostokąt Porównanie 1"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -25,7 +25,7 @@ TEST_CASE("test Wektor Porównanie 1"){
     CHECK(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 2"){
+TEST_CASE("test Prostokąt Porównanie 2"){
     Prostokat x, y;
 
     x[0][0] = 9;
@@ -49,7 +49,7 @@ TEST_CASE("test Wektor Porównanie 2"){
     CHECK_FALSE(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 3"){
+TEST_CASE("test Prostokąt Porównanie 3"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -73,7 +73,7 @@ TEST_CASE("test Wektor Porównanie 3"){
     CHECK_FALSE(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 4"){
+TEST_CASE("test Prostokąt Porównanie 4"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -97,7 +97,7 @@ TEST_CASE("test Wektor Porównanie 4"){
     CHECK_FALSE(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 5"){
+TEST_CASE("test Prostokąt Porównanie 5"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -121,7 +121,7 @@ TEST_CASE("test Wektor Porównanie 5"){
     CHECK_FALSE(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 6"){
+TEST_CASE("test Prostokąt Porównanie 6"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -145,7 +145,7 @@ TEST_CASE("test Wektor Porównanie 6"){
     CHECK_FALSE(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 7"){
+TEST_CASE("test Prostokąt Porównanie 7"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -169,7 +169,7 @@ TEST_CASE("test Wektor Porównanie 7"){
     CHECK_FALSE(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 8"){
+TEST_CASE("test Prostokąt Porównanie 8"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -193,7 +193,7 @@ TEST_CASE("test Wektor Porównanie 8"){
     CHECK_FALSE(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 9"){
+TEST_CASE("test Prostokąt Porównanie 9"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -217,7 +217,7 @@ TEST_CASE("test Wektor Porównanie 9"){
     CHECK_FALSE(x == y);
 }
 
-TEST_CASE("test Wektor Porównanie 1"){
+TEST_CASE("test Prostokąt Porównanie 1"){
     Prostokat x, y;
 
     x[0][0] = 1;
@@ -241,7 +241,7 @@ TEST_CASE("test Wektor Porównanie 1"){
     CHECK_FALSE(x != y);
 }
 
-TEST_CASE("test Wektor Przesuwanie 1"){
+TEST_CASE("test Prostokąt Przesuwanie 1"){
     Prostokat x, y;
     Wektor z;
 
@@ -270,8 +270,8 @@ TEST_CASE("test Wektor Przesuwanie 1"){
 
     CHECK(x == y);
 }
-
-TEST_CASE("test Wektor Obrót 1"){
+/*
+TEST_CASE("test Prostokąt Obrót 1"){
     Prostokat x, y;
     double z = 90;
 
@@ -297,3 +297,4 @@ TEST_CASE("test Wektor Obrót 1"){
 
     CHECK(x == y);
 }
+*/
