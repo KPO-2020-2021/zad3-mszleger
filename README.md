@@ -1,20 +1,7 @@
+Wszystkie komentarze objaśniające przeznaczenie funkcji zostały podane w plikach nagłówkowych.
 
-## Building
+Wielkości macierzy i wielkości wektorów podaje się osobno odpowiednio w plikach nagłówkowych macierzy i wektora.
 
-Build by making a build directory (i.e. `build/`), run `cmake` in that dir, and then use `make` to build the desired target.
+Dodałem zadaną modyfikację programu: przeciążenie operatora mnożenenia ze sobą dwóch macierzy, metoda obliczająca wyznacznik macierzy.
 
-Requirements: 
-
-Example:
-
-``` bash
-> mkdir build && cd build
-> cmake .. # options: -DCMAKE_BUILD_TYPE=[Debug | Coverage | Release], Debug is default
-> make
-> ./main
-> make test      # Makes and runs the tests.
-> make coverage  # Generate a coverage report.
-> make doc       # Generate html documentation.
-```
-
-
+W funkcji sprawdzającej długości boków prostokąta pominąłem zmianę komunikatów w sytuacji, gdy prostokąt jest kwadratem (ma boki tej samej długości).
