@@ -123,7 +123,7 @@ TEST_CASE("test Macierz Macierz_obrotu 2"){
     CHECK(x == z);
 }
 */
-TEST_CASE("test Macierz Mnożenie 1"){
+TEST_CASE("test Macierz Mnożenie razy wektor 1"){
     Wektor x, z;
     Macierz y;
 
@@ -139,4 +139,37 @@ TEST_CASE("test Macierz Mnożenie 1"){
     z[1] = 39;
 
     CHECK((y * x) == z);
+}
+
+TEST_CASE("test Macierz Mnożenie razy macierz 1"){
+    Macierz A, B, C;
+
+    A(0, 0) = 1;
+    A(1, 0) = 2;
+    A(0, 1) = 3;
+    A(1, 1) = 4;
+
+    B(0, 0) = 5;
+    B(1, 0) = 6;
+    B(0, 1) = 7;
+    B(1, 1) = 8;
+
+    C(0, 0) = 19;
+    C(1, 0) = 22;
+    C(0, 1) = 43;
+    C(1, 1) = 50;
+
+    CHECK((A * B) == C);
+}
+
+TEST_CASE("test Macierz Obliczanie wyznacznika 1"){
+    Macierz A;
+    double wyznacznik = -2;
+
+    A(0, 0) = 1;
+    A(1, 0) = 2;
+    A(0, 1) = 3;
+    A(1, 1) = 4;
+
+    CHECK(A.obliczWyznacznik() == wyznacznik);
 }

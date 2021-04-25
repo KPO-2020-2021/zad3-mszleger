@@ -22,6 +22,42 @@ void Macierz::generujMacierzObrotu(double katWStopniach)
     wartosc[1][1] =  cos(katWRadianach);
 }
 
+double Macierz::obliczWyznacznik() const
+{
+    Macierz kopia = *this;
+    double wspolczynnik = 0;
+    double wyznacznik = 1;
+
+    // Tworzenie macierzy górno trójkątnej
+    // Pętla zmieniająca element główny (elementy na przekątnej macierzy, o współrzędnych axa)
+    for(int x = 0; x < ROZMIAR_MACIERZY; x++)
+    {
+        if(kopia.wartosc[x][x] == 0)
+        {
+            throw(1);
+        }
+        // Pętla przełączająca pomiędzy wierszami następującymi po aktualnym wierszu
+        for(int y = x+1; y < ROZMIAR_MACIERZY; y++)
+        {
+            // Obliczanie współczynnika, z jakim musi zostać odjęty wiersz x od wiersza y
+            wspolczynnik = kopia.wartosc[x][y] / kopia.wartosc[x][x];
+            // Odjemowanie wiersza x pomnożonego o dany współczynnik od wiersza
+            // Przewijanie pomiędzy kolumnami modyfikowanego wiersza
+            for(int z = x; z < ROZMIAR_MACIERZY; z++)
+            {
+                kopia.wartosc[z][y] -= (kopia.wartosc[z][x] * wspolczynnik);
+            }
+        }
+    }
+    // Obliczanie wyznacznika
+    for(int x = 0; x < ROZMIAR_MACIERZY; x++)
+    {
+        wyznacznik *= kopia.wartosc[x][x];
+    }
+
+    return wyznacznik;
+}
+
 Wektor  Macierz::operator *  (const Wektor &wektor) const
 {
     #if (ROZMIAR_MACIERZY != ROZMIAR_WEKTORA)
@@ -38,6 +74,27 @@ Wektor  Macierz::operator *  (const Wektor &wektor) const
         }
     }
     
+    return wynik;
+}
+
+Macierz Macierz::operator *  (const Macierz &macierz) const
+{
+    Macierz wynik;
+
+    // Pętla przewijająca wiersze pierwszej macierzy
+    for(int x = 0; x < ROZMIAR_MACIERZY; x++)
+    {
+        // Pętla przewijająca kolumny drugiej macierzy
+        for(int y = 0; y < ROZMIAR_MACIERZY; y++)
+        {
+            // Pętla przewijająca pomiędzy poszczególnymi elementami w wierszu pierwszej macierzy i kolumnie drugiej macierzy
+            for(int z = 0; z < ROZMIAR_MACIERZY; z++)
+            {
+                // Sumowanie poszczególnych iloczynów
+                wynik.wartosc[y][x] += (this->wartosc[z][x] * macierz.wartosc[y][z]);
+            }
+        }
+    }
     return wynik;
 }
 
